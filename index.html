@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lag Monster</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      height: 100%;
+      overflow: hidden;
+    }
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <video id="monsterVideo" autoplay muted loop playsinline>
+    <source src="LagMonsterOfficial.mp4" type="video/mp4">
+    your browser does not support the video tag.
+  </video>
+  <audio id="ominousSound" src="snd_ominous.ogg"></audio>
+
+  <script>
+    document.body.addEventListener('click', () => {
+      const sound = document.getElementById('ominousSound');
+      if (sound.paused) {
+        sound.play();
+      }
+    });
+  </script>
+</body>
+</html>
